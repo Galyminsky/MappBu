@@ -4,5 +4,7 @@
     <string name="catalog">Catalog</string>
     <string name="delivery">Delivery</string>
     <string name="setting">Setting</string>
+    <string name="alco">Alco</string>
+    <string name="help">Help</string>
 
 </resources>

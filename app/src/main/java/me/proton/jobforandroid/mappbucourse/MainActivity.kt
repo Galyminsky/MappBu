@@ -2,6 +2,7 @@ package me.proton.jobforandroid.mappbucourse
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import me.proton.jobforandroid.mappbucourse.databinding.ActivityMainBinding
 import me.proton.jobforandroid.mappbucourse.fragment.CatalogFragment
 import me.proton.jobforandroid.mappbucourse.fragment.DeliveryFragment
@@ -16,9 +17,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.topAppBar)
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.contener, HomeFragment.newInstance())
             .commit()
+
+        binding.nav.setOnNavigationItemSelectedListener(this)
+        binding.nav.selectedItemId = R.id.item_home
+
 
         binding.nav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -40,5 +47,11 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.top_menu, menu)
+        return true
     }
 }

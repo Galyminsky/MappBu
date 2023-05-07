@@ -30,26 +30,25 @@
                     app:titleTextColor="@color/black"
                     app:navigationIcon="@drawable/ic_menu"
                     app:menu="@menu/top_menu"
-                    style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary">
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary">
 
                 </com.google.android.material.appbar.MaterialToolbar>
-
-
             </com.google.android.material.appbar.AppBarLayout>
-
-
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <FrameLayout
             android:id="@+id/contener"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"/>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav"
@@ -57,6 +56,5 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav" />
-
-
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
